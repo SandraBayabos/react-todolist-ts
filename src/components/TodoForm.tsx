@@ -13,7 +13,7 @@ const TodoForm = (props: TodoFormInterface) => {
   // useRef hook stores the reference to the input
   const inputRef = React.useRef<HTMLInputElement>(null);
 
-  // Handle todo input change
+  // Handle todo input change - updates the form state when you write something into the input
   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
     //update form state with the text from input
     setFormstate(event.target.value);
@@ -23,7 +23,7 @@ const TodoForm = (props: TodoFormInterface) => {
   function handleInputEnter(event: React.KeyboardEvent) {
     // Check for 'Enter' key
     if (event.key === "Enter") {
-      // Prepare new todo object
+      // Prepare new todo object and shortid generates a unique id for every new todo
       const newTodo: TodoInterface = {
         id: shortid.generate(),
         text: formState,
