@@ -4,11 +4,14 @@ import shortid from "shortid";
 import { TodoFormInterface, TodoInterface } from "../interfaces";
 
 const TodoForm = (props: TodoFormInterface) => {
-  // create Ref for form input
-  const inputRef = React.useRef<HTMLInputElement>(null);
+  // create form state.
+  // useState hook stores the text passed into the input element for the todo title before new todo item is created
 
-  // create form state
   const [formState, setFormstate] = React.useState("");
+
+  // create Ref for form input
+  // useRef hook stores the reference to the input
+  const inputRef = React.useRef<HTMLInputElement>(null);
 
   // Handle todo input change
   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
