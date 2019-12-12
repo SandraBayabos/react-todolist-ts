@@ -1,5 +1,5 @@
 // Import dependencies
-import * as React from "react";
+import React from "react";
 
 // Import interfaces
 import { TodoItemInterface } from "./../interfaces";
